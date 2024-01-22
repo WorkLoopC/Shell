@@ -1,4 +1,4 @@
-//use cd to change directory (will start using on other commands like ll soon)
+//use cd to change directory (will start using on other commands like ll soon,THIS CODE IS NOT FINISHED YET)
 #include <iomanip>
 #include <iostream>
 #include <Windows.h>
@@ -40,14 +40,10 @@ for (int i=0;i<x;i++) {
     std::cout << "-";
     }
 }
-
-
 int main() {
 shellView();
 while(1){
 //changeDirectory();
 }
-
-
 return 0;
 }
