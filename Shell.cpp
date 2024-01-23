@@ -1,20 +1,15 @@
-//use cd to change directory (will start using on other commands like ll soon,THIS CODE IS NOT FINISHED YET)
+//This code cannot be finished because from what i have learned you cant run rest of the code without having to put user input first
+//This means that the "shell" is not going to be displayed untill input is given 
 #include <iomanip>
 #include <iostream>
 #include <Windows.h>
+#include <string>
+//#include <filesystem>
 
-void changeDirectory() {
-std::string newPath;
-std::string path;
-if (SetCurrentDirectory(path.c_str()) == 0) {
-    std::string userInput;
-    std::getline(std::cin, userInput);
-if (userInput.substr(0, 2) == "cd") {
-    newPath = userInput.substr(3); 
-    changeDirectory();}
-else {
-    std::cerr << "Invalid command. Use 'cd' to change the directory." <<"\n";}
-    }
+std::string getUserInput() {
+std::string userInput;
+std::getline(std::cin, userInput);
+return userInput;
 }
 
 void shellView() {
@@ -24,8 +19,7 @@ const int y = 10;
 for (int i=0;i<x;i++) {
 std::cout << "-";}
 std::cout << "\n";
-std::cout << '|' << ".>" << std::setw(56) << '|';
-//getline(std::cin, userInput);
+std::cout << '|' << ".>"<<getUserInput() << std::setw(30) << '|'<<'\n'<<std::flush;
 std::cout << "\n";
 for (int i=0;i<y;i++) {
     for (int j=0;j<x;j++) {
@@ -40,10 +34,9 @@ for (int i=0;i<x;i++) {
     std::cout << "-";
     }
 }
+
 int main() {
-shellView();
 while(1){
-//changeDirectory();
+shellView();
 }
-return 0;
-}
+return 0;}
